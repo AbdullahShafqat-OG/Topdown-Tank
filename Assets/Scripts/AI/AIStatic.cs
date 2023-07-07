@@ -4,18 +4,16 @@ using UnityEngine;
 
 public class AIStatic : MonoBehaviour
 {
+    [SerializeField]
+    private AIBehaviour _shootBehavior, _patrolBehavior;
+
     private TankController _tank;
     private AIDetector _detector;
-
-    private AIBehaviour _shootBehavior, _patrolBehavior;
 
     private void Awake()
     {
         _tank = GetComponentInChildren<TankController>();
         _detector = GetComponentInChildren<AIDetector>();
-
-        _shootBehavior = GetComponent<AIShootBehaviour>();
-        _patrolBehavior = GetComponent<AIStaticPatrolBehaviour>();
     }
 
     private void Update()

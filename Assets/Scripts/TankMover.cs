@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TankMover : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class TankMover : MonoBehaviour
     private float _currentSpeed = 0;
     private float _currentForwardDirection = 1;
 
+    public UnityEvent<float> OnSpeedChange = new UnityEvent<float>();
+
     private void Awake()
     {
         _rb = GetComponentInParent<Rigidbody2D>();
@@ -22,10 +25,20 @@ public class TankMover : MonoBehaviour
     {
         _movementVector = movementVector;
         CalculateSpeed();
-        if (_movementVector.y > 0)
+        OnSpeedChange?.Invoke(_movementVector.magnitude);
+
+        if (movementVector.y > 0)
+        {
+            if (_currentForwardDirection == -1)
+                _currentSpeed = 0;
             _currentForwardDirection = 1;
-        else if (_movementVector.y < 0)
+        }
+        else if (movementVector.y < 0)
+        {
+            if (_currentForwardDirection == 1)
+                _currentSpeed = 0;
             _currentForwardDirection = -1;
+        }
     }
 
     private void CalculateSpeed()
@@ -44,7 +57,6 @@ public class TankMover : MonoBehaviour
     private void FixedUpdate()
     {
         _rb.velocity = (Vector2)transform.up * _currentSpeed * _currentForwardDirection * Time.deltaTime;
-        if (_movementVector.x != 0)
-            _rb.MoveRotation(transform.rotation * Quaternion.Euler(0, 0, -_movementVector.x * _movementData.rotationSpeed * Time.deltaTime));
+        _rb.MoveRotation(transform.rotation * Quaternion.Euler(0, 0, -_movementVector.x * _movementData.rotationSpeed * Time.deltaTime));
     }
 }
