@@ -16,8 +16,8 @@ TagManager:
   - Hitable
   - MovementObstacle
   - Ground
-  - 
-  - 
+  - Player
+  - Enemy
   - 
   - 
   - 
