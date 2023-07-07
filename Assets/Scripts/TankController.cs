@@ -5,13 +5,17 @@ using UnityEngine;
 public class TankController : MonoBehaviour
 {
     private TankMover _tankMover;
+
     private AimTurret _aimTurret;
+    public AimTurret AimTurret { get => _aimTurret; private set => _aimTurret = value; }
+
+
     private Turret[] _turrets;
 
     private void Awake()
     {
         _tankMover = GetComponentInChildren<TankMover>();
-        _aimTurret = GetComponentInChildren<AimTurret>();
+        AimTurret = GetComponentInChildren<AimTurret>();
         _turrets = GetComponentsInChildren<Turret>();
     }
 
@@ -30,6 +34,6 @@ public class TankController : MonoBehaviour
 
     public void HandleTurretMovement(Vector2 pointerPosition)
     {
-        _aimTurret.Aim(pointerPosition);
+        AimTurret.Aim(pointerPosition);
     }
 }

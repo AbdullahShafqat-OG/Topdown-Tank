@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: NormalTurretData
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 617002083483296067, guid: 5620fa2f9bd41e34aab199962ecb57ed, type: 3}
-  reloadDelay: 0.5
+  reloadDelay: 1
   bulletData: {fileID: 11400000, guid: f50e04374d5dbff4094e14e7e80e096f, type: 2}
