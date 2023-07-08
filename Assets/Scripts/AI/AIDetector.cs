@@ -57,7 +57,7 @@ public class AIDetector : MonoBehaviour
 
     private void CheckIfTargetOutFOV()
     {
-        if (!Target.gameObject.activeSelf || Vector2.Distance(transform.position, Target.position) > _fov)
+        if (!Target.gameObject.activeSelf || Vector2.Distance(transform.position, Target.position) > _fov + 0.5f)
             Target = null;
     }
 
