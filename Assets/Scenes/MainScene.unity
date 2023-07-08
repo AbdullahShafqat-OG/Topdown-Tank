@@ -3692,6 +3692,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1857295579799491226, guid: 5fc1f52e8bcae08468f6874571e700a5, type: 3}
+      propertyPath: OnSpeedChange.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3079560398584402168, guid: 5fc1f52e8bcae08468f6874571e700a5, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -3965,6 +3969,10 @@ PrefabInstance:
     - target: {fileID: 3233243297216969808, guid: c003ef36f869bfa41bcb1b5b5dfd07a1, type: 3}
       propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4938524483160301191, guid: c003ef36f869bfa41bcb1b5b5dfd07a1, type: 3}
+      propertyPath: OnSpeedChange.m_PersistentCalls.m_Calls.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7092359122493972562, guid: c003ef36f869bfa41bcb1b5b5dfd07a1, type: 3}
       propertyPath: m_Name

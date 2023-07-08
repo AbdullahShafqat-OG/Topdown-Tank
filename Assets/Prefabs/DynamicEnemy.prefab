@@ -720,6 +720,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7092359122493972575}
     m_Modifications:
+    - target: {fileID: 1186591504740499027, guid: 900170fce3e319a4d8786d08bd203dd9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1818662012690657587, guid: 900170fce3e319a4d8786d08bd203dd9, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -792,6 +796,10 @@ PrefabInstance:
       propertyPath: _movementData
       value: 
       objectReference: {fileID: 11400000, guid: d3b24b189cd3c7040a1d7c3c3c0b652a, type: 2}
+    - target: {fileID: 5097476743244887554, guid: 900170fce3e319a4d8786d08bd203dd9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6570008445425641018, guid: 900170fce3e319a4d8786d08bd203dd9, type: 3}
       propertyPath: _maxHealth
       value: 30

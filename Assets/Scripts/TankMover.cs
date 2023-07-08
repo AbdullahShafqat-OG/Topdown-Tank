@@ -25,7 +25,8 @@ public class TankMover : MonoBehaviour
     {
         _movementVector = movementVector;
         CalculateSpeed();
-        OnSpeedChange?.Invoke(_movementVector.magnitude);
+
+        OnSpeedChange?.Invoke(_currentSpeed / _movementData.maxSpeed);
 
         if (movementVector.y > 0)
         {
