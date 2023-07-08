@@ -506,7 +506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3c6e60004a7b964bbfcec622d388a05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _distanceThreshold: 0.1
+  _distanceThreshold: 0.5
   _waitTime: 0.1
 --- !u!1 &7092359122606188334
 GameObject:

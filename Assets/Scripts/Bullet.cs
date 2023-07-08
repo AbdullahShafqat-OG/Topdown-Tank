@@ -10,6 +10,7 @@ public class Bullet : MonoBehaviour
     private Vector2 _startPosition;
     private float _coveredDistance = 0;
     private Rigidbody2D _rb;
+    private AudioSource _audioSource;
 
     public UnityEvent OnHit = new UnityEvent();
 
@@ -23,6 +24,9 @@ public class Bullet : MonoBehaviour
         _bulletData = bulletData;
         _startPosition = transform.position;
         _rb.velocity = transform.up * _bulletData.speed;
+
+        if (_audioSource == null)
+            _audioSource = GetComponentInParent<AudioSource>();
     }
 
     private void Update()
@@ -41,6 +45,8 @@ public class Bullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         OnHit?.Invoke();
+
+        _audioSource.PlayOneShot(_bulletData.impactSFX);
 
         Damageable damageable = collision.GetComponent<Damageable>();
         if (damageable != null)

@@ -52,6 +52,11 @@ public class ObjectPool : MonoBehaviour
         {
             string name = "ObjectPool_" + transform.root.name + "_" + _objectToPool.name;
             _spawnedObjectsParent = new GameObject(name).transform;
+
+            if (_objectToPool.GetComponent<Bullet>() != null)
+            {
+                _spawnedObjectsParent.gameObject.AddComponent<AudioSource>();
+            }
         }
     }
 

@@ -15,3 +15,4 @@ MonoBehaviour:
   speed: 10
   damage: 5
   maxDistance: 5
+  impactSFX: {fileID: 8300000, guid: 3b4fba7ac5949664d82718937d08bc1e, type: 3}
